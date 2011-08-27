@@ -15,8 +15,10 @@ div.content { margin: 20px; }
 div.day { padding:8px; padding-top:20px;}
 div.day:hover{ background:#0069D6; color:#FFFFFF;}
 
-div.left { float:left; width:300px;}
+div.left { float:left; margin-right:40px;}
 div#tracks { float:right; }
 div.clear { clear: both;}
 
 textarea#description { height:52px; width: 100%; min-width:600px;}
+
+div.tips { font-size: 10px; text-align:right; }
