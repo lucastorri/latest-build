@@ -8,6 +8,7 @@ require('server')(
   [
     require('controllers/index'),
     require('controllers/conference'),
-    require('controllers/tweetalk')
+    require('controllers/tweetalk'),
+    require('controllers/talk')
   ]
 );

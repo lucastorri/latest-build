@@ -9,7 +9,6 @@ $(function() {
   now.renderTweet = function(roomId, tweet) {
     var entry = $('<li>');
     entry.text(tweet);
-    console.log(entry);
     dom.roomStream(roomId).append(entry);
   };
 
