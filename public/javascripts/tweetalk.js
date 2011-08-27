@@ -19,10 +19,13 @@ $(function() {
     this.tweet.value = '';
     return false;
   });
+
+  now.joined = function(u1, u2) {
+    console.log(u1, u2);
+  };
+  
 });
 
 var tweetalk = function(id) {
-  now.joinRoom(id, function(stream) {
-    //Render existing stream
-  });
+  now.joinRoom(id);
 };
