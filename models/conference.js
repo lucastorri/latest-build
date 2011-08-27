@@ -44,29 +44,29 @@ Track.pre('save', createSlug);
 Conference.pre('save', createSlug);
 
 
-var ATweetTalk = mongoose.model('TweetTalk', TweetTalk);
-var tt = new ATweetTalk();
+var TweetTalkModel = mongoose.model('TweetTalk', TweetTalk);
+var tt = new TweetTalkModel();
 tt.tweet = '1234567890';
 
-var ATalk = mongoose.model('Talk', Talk);
-var talk = new ATalk();
+var TalkModel = mongoose.model('Talk', Talk);
+var talk = new TalkModel();
 talk.title = 'Ruby duck type with the pros';
 talk.authors = ['Araving SV'];
 talk.time = Date();
 talk.tweettalks = [tt];
 
-var ATrack = mongoose.model('Track', Track);
-var track = new ATrack();
+var TrackModel = mongoose.model('Track', Track);
+var track = new TrackModel();
 track.title = 'Learning with the pros';
 track.talks = [talk];
 
-var ADay = mongoose.model('Day', Day);
-var day = new ADay();
+var DayModel = mongoose.model('Day', Day);
+var day = new DayModel();
 day.date = Date();
 day.tracks = [track];
 
-var AConf = mongoose.model('Conference', Conference);
-var conf = new AConf();
+var ConfModel = mongoose.model('Conference', Conference);
+var conf = new ConfModel();
 conf.title = 'Conferencia das Aves';
 conf.days = [day];
 
@@ -74,8 +74,18 @@ conf.save(function(err) {
   console.log(err);
 });
 
-AConf.find({}, function(err, docs) {
+ConfModel.find({}, function(err, docs) {
   (err && console.log(err)) || docs.forEach(function(d) {
     console.log(d)
   });
 });
+
+
+module.exports = {
+  TweetTalk: function() { return new TweetTalkModel(); },
+  Talk: function() { return new TalkModel(); },
+  Track: function() { return new TrackModel(); },
+  Day: function() { return new DayModel(); },
+  Conference: function { return new ConfModel(); },
+  mongoose: mongoose
+}
