@@ -1,0 +1,14 @@
+{
+  "author": "",
+  "name": "latestbuild",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nko2/latest-build.git"
+  },
+  "engines": {
+    "node": ">=v0.4.9"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
