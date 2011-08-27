@@ -1,8 +1,11 @@
+script(src='js/conference.js')
+
 .content-fluid
   .content
     h1 Creating your conference
 
     form(method='post')
       p
-        label(for="conference[title]") Title:
         input(type="text", name="user[name]")
+      div.new_day
+        a(href="#") add new day
