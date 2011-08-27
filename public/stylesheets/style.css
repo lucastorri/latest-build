@@ -1,7 +1,12 @@
 body {
-  padding: 25px 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-div.container-fluid div.content { margin: 0 300px 0 0; max-width: none; }
-div.container-fluid div.sidebar { top: 50px; right: 0; position: absolute; width: 250px; margin-right: 25px; }
+div.header { margin: 10px; }
+div.header h1 { margin-left: 5px; }
+div.container { margin: 0; width: auto; }
+div.container div.content { margin-right: 250px; }
+div.container div.sidebar { top: 10px; right: 0; position: absolute; width: 250px; }
+
+form input.tweetalk-input { width: 170px; }
+form input.tweetalk-submit { width: 70px; }
