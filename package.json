@@ -17,5 +17,8 @@
       "type"          : "git"
     , "url"           : "git://github.com/nko2/latest-build.git"
   }
+  , "scripts": {
+    "start": "node app.js"
+  }
   , "main": "app.js"
 }
