@@ -8,5 +8,8 @@ require('server')(
   ,[
     require('controllers/index')
   , require('controllers/conference')
+  , require('controllers/day')
+  , require('controllers/track')
+  , require('controllers/talk')
   ]
 );
