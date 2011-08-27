@@ -8,5 +8,6 @@ require('server')(
   ,[
     require('controllers/index')
    ,require('controllers/conference')
+   ,require('controllers/talk')
   ]
 );
