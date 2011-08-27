@@ -1,3 +1,4 @@
+require('nko')('Ty+4sWFWMy2Rk0aQ');
 
 /**
  * Module dependencies.
@@ -34,5 +35,5 @@ app.get('/', function(req, res){
   });
 });
 
-app.listen(3000);
+app.listen(parseInt(process.env.PORT) || 7777);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
