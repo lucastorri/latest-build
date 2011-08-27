@@ -9,31 +9,43 @@ var conference = function(){
   };
 
   var createTalk = function(html){
-    $(html).dialog({
-      buttons: {
-        'save': function(){},
-        'cancel': function(){}
-      },
-      modal: true,
-      draggable: false,
-      width: '550px',
-      title: 'create a new talk',
-      position: ['center', 50]
-    });
-    $('#start').datetimepicker({
-      ampm: true,
-      separator: ' @ '
-    });
-    $('#end').datetimepicker({
-      ampm: true,
-      separator: ' @ '
-    });
-    $('#authors').tagsInput({
-      width: 205
-    });
-    $('#tracks').tagsInput({
-      width: 205
-    });
+    dialog(html);
+    createPickers(html);
+    createTags(html);
+   };
+
+  var createTags = function(html){
+    var config = {width: 205};
+    $('#authors').tagsInput(config);
+    $('#tracks').tagsInput(config);
+  };
+
+  var createPickers = function(html){
+    var config = {ampm: true, separator: ' @ '};
+    $('.start').datetimepicker(config);
+    $('.end').datetimepicker(config);
+  };
+
+  var dialog = function(content){
+     $(content).dialog({
+        buttons: {
+          'save': function(){},
+          'cancel': function(){}
+        },
+        modal: true,
+        draggable: false,
+        width: '550px',
+        title: 'create a new talk',
+        position: ['center', 50],
+        resizable: false,
+        close: cleanup
+     });
+  };
+
+  var cleanup = function(){
+    $('.ui-dialog').remove();
+    $('#ui-datepicker-div').remove();
+    $('.talk_form').remove();
   };
 
   bind();
