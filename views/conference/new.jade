@@ -1,0 +1,31 @@
+.container
+  .content
+
+    h1 your conference
+
+    form(method='POST')
+      div.left
+        p
+          h3 title
+          input(type='text')
+        p
+          h3 where?
+          input(type='text')
+      div.left
+        p
+          h3 description
+          textarea#description
+        input.btn.save.primary(type='submit', value='save')
+      div.clear
+
+    h1 talks
+    div.btn.primary new
+    table.zebra-striped
+      thead
+        tr
+          th title
+          th start
+          th end
+          th authors
+          th tracks
+      tbody

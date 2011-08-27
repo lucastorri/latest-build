@@ -7,5 +7,6 @@ require('server')(
   // Controllers
   ,[
     require('controllers/index')
+   ,require('controllers/conference')
   ]
 );

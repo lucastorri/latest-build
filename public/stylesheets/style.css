@@ -18,3 +18,5 @@ div.day:hover{ background:#0069D6; color:#FFFFFF;}
 div.left { float:left; width:300px;}
 div#tracks { float:right; }
 div.clear { clear: both;}
+
+textarea#description { height:52px; width: 100%; min-width:600px;}
