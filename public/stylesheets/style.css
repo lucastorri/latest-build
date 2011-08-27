@@ -1,8 +1,7 @@
 body {
-  padding: 50px;
+  padding: 25px 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
-}
+div.container-fluid div.content { margin: 0 300px 0 0; max-width: none; }
+div.container-fluid div.sidebar { top: 50px; right: 0; position: absolute; width: 250px; margin-right: 25px; }
