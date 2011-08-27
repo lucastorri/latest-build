@@ -1,12 +1,31 @@
-script(src='/javascripts/conference.js')
+.container
+  .content
 
-.content-fluid
-	.content
-		h1 Creating your conference
+    h1 your conference
 
-		form(method='post')
-			p title  
-				input(type="text", name="user[name]")
-			div.add_new_day
-				a#new_day(href="#") add new day
-			div#days
+    form(method='POST')
+      div.left
+        p
+          h3 title
+          input(type='text')
+        p
+          h3 where?
+          input(type='text')
+      div.left
+        p
+          h3 description
+          textarea#description
+        input.btn.save.primary(type='submit', value='save')
+      div.clear
+
+    h1 talks
+    div.btn.primary new
+    table.zebra-striped
+      thead
+        tr
+          th title
+          th start
+          th end
+          th authors
+          th tracks
+      tbody
