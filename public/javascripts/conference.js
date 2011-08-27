@@ -1,23 +1,20 @@
 var conferencePage = function(){
-	var bind = function(){
-		enableAddDay();
-	};
-	
-	var enableAddDay = function(){
-		$('#new_day').click(function(e){
-			e.preventDefault();
-			$.ajax({
-				url: '/conference/day/new',
-				success: function(res){
-					$('#days').append(res);
-				}
-			})
-		});
-	};
-	
-	bind();
+  var bind = function(){
+    enableAddDay();
+  };
+
+  var createDay = function(e){
+    e.preventDefault();
+    var day = dayPage();
+  };
+
+  var enableAddDay = function(){
+    $('#new_day').click(createDay);
+  };
+
+  bind();
 };
 
 $(document).ready(function(){
-	conferencePage();
+  conferencePage();
 });
