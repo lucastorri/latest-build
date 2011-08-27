@@ -10,3 +10,6 @@ div.container div.sidebar { top: 10px; right: 0; position: absolute; width: 250p
 
 form input.tweetalk-input { width: 170px; }
 form input.tweetalk-submit { width: 70px; }
+
+div.content { margin: 20px; }
+div.day { margin:10px; }
