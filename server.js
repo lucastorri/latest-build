@@ -66,4 +66,8 @@ app.get('/conference/new', function(req, res){
   });
 });
 
+app.get('/conference/day/new', function(req, res){
+	res.render('conference/day/new');
+});
+
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

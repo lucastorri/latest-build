@@ -1,11 +1,12 @@
-script(src='js/conference.js')
+script(src='/javascripts/conference.js')
 
 .content-fluid
-  .content
-    h1 Creating your conference
+	.content
+		h1 Creating your conference
 
-    form(method='post')
-      p
-        input(type="text", name="user[name]")
-      div.new_day
-        a(href="#") add new day
+		form(method='post')
+			p
+				input(type="text", name="user[name]")
+			div.add_new_day
+				a#new_day(href="#") add new day
+			div#days
