@@ -47,10 +47,34 @@ app.configure( function () {
   app.use(express.static(__dirname + '/public'));
 });
 
-app.get('/', function (req, res) {
+everyauth.helpExpress(app);
+
+app.configure('development', function(){
+  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+});
+
+app.configure('production', function(){
+  app.use(express.errorHandler());
+});
+
+
+
+//== Routes =======================================
+
+app.get('/t_auth', function (req, res) {
   res.render('home');
 });
 
-everyauth.helpExpress(app);
+app.get('/', function(req, res){
+  res.render('index', {
+    title: 'Express'
+  });
+});
+
+app.get('/conference/new', function(req, res){
+  res.render('conference/new', {
+    title : 'Conference'
+  });
+});
 
 app.listen(parseInt(process.env.PORT) || 7777);
