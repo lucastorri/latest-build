@@ -5,23 +5,28 @@ $(function() {
       return $('.tweetalk[data-room-id='+roomId+'] .stream');
     }
   };
-
-  now.renderTweet = function(roomId, tweet) {
+  
+  function appendTweet(roomId, tweet) {
     var entry = $('<li>');
     entry.text(tweet);
-    console.log(dom.roomStream(roomId));
+    console.log(entry, dom.roomStream(roomId));
     dom.roomStream(roomId).append(entry);
   };
-
+  
+  now.renderTweet = function(roomId, tweet) {
+    console.log(123, roomId, tweet);
+    appendTweet(roomId, tweet);
+  };
+  
   dom.tweetalkForms.live('submit', function() {
-    var roomId = $('#room').attr('data-room-id');
+    var roomId = $('#room').data('room-id');
     now.sendTweet(roomId, this.tweet.value);
     this.tweet.value = '';
     return false;
   });
-
-  now.joined = function(u1, u2) {
-    console.log(u1, u2);
+  
+  now.joined = function(userName, roomId) {
+    appendTweet(roomId, userName+' joined');
   };
   
 });
