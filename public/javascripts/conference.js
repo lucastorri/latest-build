@@ -19,6 +19,14 @@ var conference = function(){
       width: '550px',
       title: 'create a new talk'
     });
+    $('#start').datetimepicker({
+      ampm: true,
+      separator: ' @ '
+    });
+    $('#end').datetimepicker({
+      ampm: true,
+      separator: ' @ '
+    });
   };
 
   bind();
