@@ -17,7 +17,8 @@ var conference = function(){
       modal: true,
       draggable: false,
       width: '550px',
-      title: 'create a new talk'
+      title: 'create a new talk',
+      position: ['center', 50]
     });
     $('#start').datetimepicker({
       ampm: true,
@@ -26,6 +27,12 @@ var conference = function(){
     $('#end').datetimepicker({
       ampm: true,
       separator: ' @ '
+    });
+    $('#authors').tagsInput({
+      width: 205
+    });
+    $('#tracks').tagsInput({
+      width: 205
     });
   };
 
