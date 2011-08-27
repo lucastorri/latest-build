@@ -22,3 +22,4 @@ div.clear { clear: both;}
 textarea#description { height:52px; width: 100%; min-width:600px;}
 
 div.tips { font-size: 10px; text-align:right; }
+.talk { cursor: pointer; }
