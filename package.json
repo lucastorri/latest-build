@@ -20,5 +20,5 @@
     "type": "git",
     "url": "git://github.com/nko2/latest-build.git"
   },
-  "main": "server.js"
+  "main": "app.js"
 }
