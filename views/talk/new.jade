@@ -1,27 +1,31 @@
-form(method='POST')
-  div.left
-    p
-      h4 title
-      input(type='text')
-    p
-      h4 tracks
-      input(type='text')
-      div.tips
-        i (separated by comma)
-    p
-      h4 authors
-      input(type='text')
-      div.tips
-        i (separated by comma)
-    div.clear
+div(style='margin-left:10px')
+  form(method='POST')
+    div.left
+      p
+        h4 title
+        input(type='text')
+      p
+        h4 room
+        input(type='text')
+      p
+        h4 tracks
+        input#tracks(type='text')
+        div.tips
+          i (hit tab to create a new one)
+      div.clear
 
-  div.left
-    p
-      h4 start
-      input(type='text')
-    p
-      h4 end
-      input(type='text')
-    div.clear
+    div.left(style='margin-right:0')
+      p
+        h4 start
+        input#start(type='text')
+      p
+        h4 end
+        input#end(type='text')
+      p
+        h4 authors
+        input#authors(type='text')
+        div.tips
+          i (hit tab to create a new one)
+      div.clear
 
-  div.clear
+    div.clear
