@@ -9,7 +9,7 @@ var conferencePage = function(){
 			$.ajax({
 				url: '/conference/day/new',
 				success: function(res){
-					alert(res);
+					$('#days').append(res);
 				}
 			})
 		});
