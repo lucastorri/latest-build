@@ -23,14 +23,12 @@ everyauth
 
 
 var app = express.createServer(
-    express.bodyParser()
-  , express.static(__dirname + "/public")
   , express.cookieParser()
-  , express.session({ secret: 'l47357'})
+  , express.session({ secret: 'L47357'})
   , everyauth.middleware()
 );
 
-app.configure( function () {
+app.configure(function() {
   app.set('view engine', 'jade');
   app.use(express.bodyParser());
   app.use(express.methodOverride());
