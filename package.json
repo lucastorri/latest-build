@@ -3,11 +3,13 @@
   "version": "0.0.1",
   "dependencies": {
     "express": "2.4.6",
-    "jade": ">= 0.0.1"
+    "jade": "0.15.2",
+    "now": "0.7.4",
+    "underscore": "1.1.7"
   },
   "devDependencies": {},
   "engines": {
-    "node": "*"
+    "node": "0.4.7"
   },
   "author": "",
   "repository": {
