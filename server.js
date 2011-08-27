@@ -7,27 +7,18 @@ var usersByTwitId = {};
 var usersById = {};
 
 function addUser (source, sourceUser) {
-  var user;
-  if (arguments.length === 1) { // password-based
-    user = sourceUser = source;
-    user.id = ++nextUserId;
-    return usersById[nextUserId] = user;
-  } else { // non-password-based
-    user = usersById[++nextUserId] = {id: nextUserId};
-    user[source] = sourceUser;
-  }
+  var user = usersById[++nextUserId] = {id: nextUserId};
+  user[source] = sourceUser;
   return user;
 }
 
 everyauth
   .twitter
-//    .myHostname('http://local.host:3000')
     .consumerKey(conf.twit.consumerKey)
     .consumerSecret(conf.twit.consumerSecret)
     .findOrCreateUser( function (sess, accessToken, accessSecret, twitUser) {
       return usersByTwitId[twitUser.id] || (usersByTwitId[twitUser.id] = addUser('twitter', twitUser));
     })
-    .callbackPath('/auth/twitter/callback')
     .redirectPath('/');
 
 
