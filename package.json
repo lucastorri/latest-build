@@ -1,24 +1,21 @@
 {
-  "name": "latest-build",
-  "version": "0.0.1",
-  "dependencies": {
-    "express": "2.4.6",
-    "nko": "0.1.1",
-    "jade": "0.15.2",
-    "now": "0.7.4",
-    "underscore": "1.1.7",
-    "everyauth": "0.2.18",
-    "mongoose": "2.0.2",
-    "nodemon": "0.5.5"
-  },
-  "devDependencies": {},
-  "engines": {
-    "node": "0.4.7"
-  },
-  "author": "",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/nko2/latest-build.git"
-  },
-  "main": "app.js"
+    "name"            : "latest-build"
+  , "version"         : "0.0.1"
+  , "dependencies"    : {
+      "express"       : "2.4.6"
+    , "nko"           : "0.1.1"
+    , "jade"          : "0.15.2"
+    , "now"           : "0.7.4"
+    , "underscore"    : "1.1.7"
+    , "everyauth"     : "0.2.18"
+    , "mongoose"      : "2.0.2"
+  }
+  , "devDependencies" : {
+    "nodemon"         : "0.5.5"
+  }
+  , "repository"      : {
+      "type"          : "git"
+    , "url"           : "git://github.com/nko2/latest-build.git"
+  }
+  , "main": "app.js"
 }
