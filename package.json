@@ -6,7 +6,10 @@
     "nko": "0.1.1",
     "jade": "0.15.2",
     "now": "0.7.4",
-    "underscore": "1.1.7"
+    "underscore": "1.1.7",
+    "everyauth": "0.2.18",
+    "mongoose": "2.0.2",
+    "nodemon": "0.5.5"
   },
   "devDependencies": {},
   "engines": {
