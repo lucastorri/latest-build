@@ -1,0 +1,21 @@
+{
+  conference: '',
+  days: [
+    {
+      date: '26/09/11',
+      tracks: [
+        {
+          name: 'java',
+          talks: [
+            title: 'Ruby Duck Typing',
+            authors: ['Araving Venkatanaranapa', ...],
+            tweetalks: ['1', '2', '3']
+          ]
+        },
+        ...
+      ]
+    },
+    ...
+  }
+
+}
