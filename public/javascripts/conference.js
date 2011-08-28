@@ -47,7 +47,7 @@ var form = function(){
 
   var fail = function(title, action){
     $('#result').addClass('error').removeClass('success').show();
-    $('#result p.message').text('error '+ action + ' ' +title);
+    $('#result p.message').text('error '+ action + '. You should supply a title.');
   };
 
   var failOnUpdate = function(res){
