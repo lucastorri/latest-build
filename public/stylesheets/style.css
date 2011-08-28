@@ -57,3 +57,10 @@ div.home.container {
 }
 
 table.fc-agenda-days thead th { padding: 5px 0; }
+
+.ui-dialog {
+  -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+
+}
