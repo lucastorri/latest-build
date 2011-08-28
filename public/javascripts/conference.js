@@ -31,8 +31,9 @@ var form = function(){
     $('#conference').attr('method', 'PUT').attr('action','/conference/'+res._id);
     success(res.title, 'created');
     $('#conference_button').attr('value', 'update');
-    $('#conference').append('<input type="hidden" name="conference[id]" value="'+res.id+'" />');
+    $('#conference').append('<input type="hidden" name="conference[id]" value="'+res._id+'" />');
     update = true;
+    conferenceId = res._id;
   };
 
   var success = function(title, action){
@@ -65,10 +66,12 @@ var form = function(){
 var talks = function(){
  var enable= function(){
     $('#new_talk').click(function(e){
-      $.ajax({
-        url: '/talk/new',
-        success: create
-      });
+      if (conferenceId){
+        $.ajax({
+          url: '/conference/'+conferenceId+'/talk/new',
+          success: create
+        });
+      }
     });
   };
 
@@ -76,7 +79,14 @@ var talks = function(){
     dialog(html);
     createPickers(html);
     createTags(html);
+    ajaxify(html);
    };
+
+  var ajaxify = function(html){
+    $('#form_talk').ajaxForm(function(res){
+      alert('oiii')
+    });
+  };
 
   var createTags = function(html){
     var config = {width: 205};
@@ -93,8 +103,8 @@ var talks = function(){
   var dialog = function(content){
    $(content).dialog({
       buttons: {
-        'save': function(){},
-        'cancel': function(){}
+        'save': function(){ $('#form_talk').submit() },
+        'cancel': function(){ $(this).dialog('close'); }
       },
       modal: true,
       draggable: false,

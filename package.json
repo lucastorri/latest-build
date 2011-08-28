@@ -8,7 +8,7 @@
     , "now"           : "0.7.4"
     , "underscore"    : "1.1.7"
     , "everyauth"     : "0.2.18"
-    , "mongoose"      : "2.0.1"
+    , "mongoose"      : "2.0.2"
     , "twitter"       : "0.1.17"
     , "superagent"    : "0.1.1"
     , "qs"            : "0.3.1"
