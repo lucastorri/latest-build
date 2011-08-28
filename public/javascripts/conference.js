@@ -47,7 +47,7 @@ var form = function(){
 
   var fail = function(title, action){
     $('#result').addClass('error').removeClass('success').show();
-    $('#result p.message').text('error '+ action + ' ' +title);
+    $('#result p.message').text('error '+ action + '. You should supply a title.');
   };
 
   var failOnUpdate = function(res){
@@ -89,9 +89,16 @@ var talks = function(){
   };
   
   var insertTalk = function(talk){
-	$('#talks_table tbody').append('<tr id="'+talk._id+'_row"><td>'+talk.title+'</td> <td>'+talk.start+'</td> <td>'+talk.end+'</td> <td>'+talk.authors.join(',')+'</td> <td>'+talk.tags.join(',')+'</td> </tr>')
+	$('#talks_table tbody').append('<tr id="'+talk._id+'_row"><td>'+talk.title+'</td> <td>'+showDate(talk.start)+'</td> <td>'+showDate(talk.end)+'</td> <td>'+talk.authors.join(',')+'</td> <td>'+talk.tags.join(',')+'</td> </tr>')
   	//feature toggle enableRemoveTalk(talk._id);
   };
+
+  var showDate = function(sdate){
+	var date = sdate.split('T')[0].split('-'); //year, month, day
+	var time = sdate.split('T')[1].match(/[\d]{2}:[\d]{2}/);
+	date = [date[1], date[2], date[0]].join('/');
+	return date + ' @ ' + time;
+  }
 
   var enableRemoveTalk = function(id){
 	$('#'+id).click(function(e){

@@ -3,7 +3,7 @@ script(src='/javascripts/conference.js')
 .form_container
   .content
 
-    h1 your conference
+    h1 Add your conference
     div#result.alert-message
       a.close(href='#') ×
       p.message
@@ -11,26 +11,26 @@ script(src='/javascripts/conference.js')
     form#conference(method='POST', action='/conference')
       div.left
         p
-          h3 title
+          h3 Title
           input(type='text', name='conference[title]')
         p
-          h3 where?
+          h3 Venue
           input(type='text', name='conference[venue]')
       div.left
         p
-          h3 description
+          h3 Description
           textarea#description(name='conference[description]')
-        input#conference_button.btn.save.primary(type='submit', value='save')
+        input#conference_button.btn.save.primary(type='submit', value='Save')
       div.clear
 
-    h1 talks
-    div#new_talk.btn.primary new
+    h1 Talks
+    div#new_talk.btn.primary New
     table#talks_table.zebra-striped
       thead
         tr
-          th title
-          th start
-          th end
-          th authors
-          th tracks
+          th Title
+          th Start
+          th End
+          th Authors
+          th Tracks
       tbody
