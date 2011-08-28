@@ -89,8 +89,24 @@ var talks = function(){
   };
   
   var insertTalk = function(talk){
-	$('#talks_table tbody').append('<tr><td>'+talk.title+'</td> <td>'+talk.start+'</td> <td>'+talk.end+'</td> <td>'+talk.authors.join(',')+'</td> <td>'+talk.tags.join(',')+'</td> </tr>')
+	$('#talks_table tbody').append('<tr id="'+talk._id+'_row"><td>'+talk.title+'</td> <td>'+talk.start+'</td> <td>'+talk.end+'</td> <td>'+talk.authors.join(',')+'</td> <td>'+talk.tags.join(',')+'</td> </tr>')
+  	//feature toggle enableRemoveTalk(talk._id);
   };
+
+  var enableRemoveTalk = function(id){
+	$('#'+id).click(function(e){
+		e.preventDefault();
+		$.ajax({
+			url: '/conference/'+conferenceId+'/talk/'+id,
+			type: 'DELETE',
+			success: removeTalk(id)
+		})
+	});
+  }
+
+  var removeTalk = function(id){
+	$('#'+id+'_row').remove();
+  }
 
   var createTags = function(html){
     var config = {width: 205};
@@ -107,7 +123,7 @@ var talks = function(){
   var dialog = function(content){
    $(content).dialog({
       buttons: {
-        'save': function(){ $('#form_talk').submit() },
+        'save': function(){ $('#form_talk').submit(); $(this).dialog('close'); },
         'cancel': function(){ $(this).dialog('close'); }
       },
       modal: true,
