@@ -18,7 +18,7 @@ $(function() {
         header: { left: '', center: 'prev title next', right: '' },
         allDaySlot: false,
         defaultView: 'agendaWeek',
-        contentHeight: $(window).height() - 160,
+        contentHeight: $(window).height() - 170,
         firstDay: firstConferenceDay.getDay(),
         events: conference.talks,
         eventClick: eventClick(conference)
@@ -29,12 +29,12 @@ $(function() {
 	
 	function eventClick(conference) {
 		return function(calendarEvent, jsEvent) {
-			var confSlug = conference.slug;
-      var talkSlug = calendarEvent.slug;
-      var roomId = confSlug+'/'+talkSlug;
-			$.get('/tweetalk/'+roomId, function(data) {
+			var slug = calendarEvent.slug;
+			$.get('/tweetalk/'+slug, function(data) {
 				data = $(data);
-				var tt = tweetalk(roomId);
+				var tt = tweetalk(slug);
+				var title = $('.title', data);
+				title.hide();
 				data.dialog({
 					title: calendarEvent.title,
 					position: [jsEvent.pageX, jsEvent.pageY],
@@ -47,4 +47,5 @@ $(function() {
 			});
 		}
 	}
+
 });

@@ -11,6 +11,9 @@ body {
 }
 
 #twetalk-logo { font-size: 42px; font-family: 'Expletus Sans', cursive; }
+#twetalk-logo span { color: #555; }
+#twetalk-logo span.we { color: #4099FF; }
+#twetalk-logo span.conference { font-size: 33px; }
 
 div.header h1 { text-align: center; }
 div.form_container { padding-top:30px; margin: 20px; }
@@ -43,3 +46,11 @@ div.upcomingEvents a { display: block; }
 #home-icon img:hover, #twitter-login img:hover { opacity: 1.0; }
 
 span.fc-header-title h2 { font-size: 16px; }
+
+div.home.container {
+  border: 1px solid #999; padding: 7px 15px 15px 15px;
+  -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eee', endColorstr='#ddd');
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
+  background: -moz-linear-gradient(top, #eee, #ddd);
+}
