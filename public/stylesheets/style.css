@@ -54,3 +54,5 @@ div.home.container {
   background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
   background: -moz-linear-gradient(top, #eee, #ddd);
 }
+
+table.fc-agenda-days thead th { padding: 5px 0; }
