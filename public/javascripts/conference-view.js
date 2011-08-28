@@ -18,7 +18,7 @@ $(function() {
         header: { left: '', center: 'prev title next', right: '' },
         allDaySlot: false,
         defaultView: 'agendaWeek',
-        contentHeight: $(window).height() - 150,
+        contentHeight: $(window).height() - 170,
         firstDay: firstConferenceDay.getDay(),
         events: conference.talks,
         eventClick: eventClick(conference)
