@@ -44,7 +44,6 @@ var conference = function(){
 
   var cleanup = function(){
     $('.ui-dialog').remove();
-    $('#ui-datepicker-div').remove();
     $('.talk_form').remove();
   };
 
