@@ -1,3 +1,5 @@
+require('nko')('Ty+4sWFWMy2Rk0aQ');
+
 require.paths.unshift(__dirname+'/lib');
 
 require('server')(
