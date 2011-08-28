@@ -33,7 +33,7 @@ Save it and your conference is now listed on the home screen \o/. When clicking 
 
 Now, click on a talk, that one you are willing to see. You'll see that a new widget will open. Drag and resize it at your will. Nothing on there? Time to start tweeting about it. What about "That talk looks great. I'm looking forward to see it!"?
 
-Congratulations! You are the first one to twetalk on this talk and soon others will join you as well.
+Congratulations! You are the first one to twetalk and everybody who is looking for that talk is already seeing your message. Very soon others will join you :D
 
 
 Colophon:
