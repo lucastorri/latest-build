@@ -1,13 +1,16 @@
 !!! 5
 html
   head
+  
     title=title
+    
     link(rel='stylesheet', href='/stylesheets/third-party/bootstrap-1.1.0.min.css')
     link(rel='stylesheet', href='/stylesheets/third-party/jquery.ui.css')
     link(rel='stylesheet', href='/stylesheets/third-party/jquery.tagsinput.css')
     link(rel='stylesheet', href='/stylesheets/third-party/fullcalendar-cupertino-theme.css')
     link(rel='stylesheet', href='/stylesheets/third-party/fullcalendar.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    
     script(type='text/javascript', src='/javascripts/third-party/jquery.min.js')
     script(type='text/javascript', src='/javascripts/third-party/jquery-ui.min.js')
     script(type='text/javascript', src='/javascripts/third-party/jquery-ui-timepicker-addon.js')
@@ -16,13 +19,23 @@ html
     script(type='text/javascript', src='/javascripts/third-party/jquery.form.js')
     script(type='text/javascript', src='/nowjs/now.js')
     script(type='text/javascript', src='/javascripts/tweetalk.js')
+  
   body
     #credentials
+      
+      if (typeof isHome === 'undefined')
+        #home-icon
+          a(href='/', style='border: 0px')
+            img(style='border: 0px', src='/images/home-icon.png')
+      
       - if (!everyauth.loggedIn)
         #twitter-login
           a(href='/auth/twitter', style='border: 0px')
             img(style='border: 0px', src='/images/sign-in-with-twitter.png')
+      
       - else
-        strong=everyauth.twitter.user.name+' - '
-        a(href='/logout') sign out
+        #signed-in-as
+          strong=everyauth.twitter.user.name+' - '
+          a(href='/logout') sign out
+    
     !=body
