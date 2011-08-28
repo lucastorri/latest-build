@@ -18,32 +18,34 @@ $(function() {
         header: { left: '', center: 'prev title next', right: '' },
         allDaySlot: false,
         defaultView: 'agendaWeek',
-        contentHeight: $(window).height() - 150,
+        contentHeight: $(window).height() - 170,
         firstDay: firstConferenceDay.getDay(),
         events: conference.talks,
-        eventClick: eventClick
+        eventClick: eventClick(conference)
       });
       
       $('#calendar').fullCalendar('gotoDate', firstConferenceDay);
   };
-  
-  function eventClick(calendarEvent, jsEvent) {
-    var slug = calendarEvent.slug;
-    $.get('/tweetalk/'+slug, function(data) {
-      data = $(data);
-      var tt = tweetalk(slug);
-      var title = $('.title', data);
-      title.hide();
-      data.dialog({
-        title: calendarEvent.title,
-        position: [jsEvent.pageX, jsEvent.pageY],
-        maxHeight: 400,
-        maxWidth: 300,
-        minHeight: 200,
-        minWidth: 100,
-        close: tt.close
-      });
-    });
-  }
+	
+	function eventClick(conference) {
+		return function(calendarEvent, jsEvent) {
+			var slug = calendarEvent.slug;
+			$.get('/tweetalk/'+slug, function(data) {
+				data = $(data);
+				var tt = tweetalk(slug);
+				var title = $('.title', data);
+				title.hide();
+				data.dialog({
+					title: calendarEvent.title,
+					position: [jsEvent.pageX, jsEvent.pageY],
+					maxHeight: 400,
+					maxWidth: 300,
+					minHeight: 200,
+					minWidth: 100,
+					close: tt.close
+				});
+			});
+		}
+	}
 
 });
