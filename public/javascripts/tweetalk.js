@@ -2,7 +2,7 @@ $(function() {
   var dom = {
     tweetalkForms: $('.tweetalk form'),
     roomStream: function(roomId) {
-      return $('.tweetalk[data-room-id='+roomId+'] .stream');
+      return $('.tweetalk[data-room='+roomId+'] .stream');
     }
   };
 
@@ -14,7 +14,7 @@ $(function() {
   };
 
   dom.tweetalkForms.live('submit', function() {
-    var roomId = $('#room').attr('data-room-id');
+    var roomId = $('#room').attr('data-room');
     now.sendTweet(roomId, this.tweet.value);
     this.tweet.value = '';
     return false;
