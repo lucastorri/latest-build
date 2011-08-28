@@ -9,10 +9,10 @@ $(function() {
     
       $('#calendar').fullCalendar({
         theme: true,
-        header: false,
+        header: { left: '', center: 'prev title next', right: '' },
         allDaySlot: false,
         defaultView: 'agendaWeek',
-        contentHeight: $(window).height() - 120,
+        contentHeight: $(window).height() - 150,
         firstDay: firstConferenceDay.getDay(),
         events: conference.talks,
         eventClick: eventClick
@@ -22,14 +22,14 @@ $(function() {
   };
   
   function eventClick(calendarEvent, jsEvent) {
-    var id = calendarEvent._id;
-    $.get('/tweetalk/'+id, function(data) {
+    var slug = calendarEvent.slug;
+    $.get('/tweetalk/'+slug, function(data) {
       data = $(data);
-      var tt = tweetalk(id);
+      var tt = tweetalk(slug);
       var title = $('.title', data);
       title.hide();
       data.dialog({
-        title: title.text(),
+        title: calendarEvent.title,
         position: [jsEvent.pageX, jsEvent.pageY],
         maxHeight: 400,
         maxWidth: 300,

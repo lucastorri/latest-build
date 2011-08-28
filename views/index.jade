@@ -1,1 +1,5 @@
 h1=title
+.container
+  h3 Upcoming events
+  - each conference in conferences
+    a(href='/conference/view/'+conference.slug)=conference.title
