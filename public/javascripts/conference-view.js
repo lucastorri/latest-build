@@ -8,6 +8,7 @@ $(function() {
 
   now.receiveConference = function(conference) {
       
+			conference.start = new Date(conference.start);
       $(conference.talks).each(function(index, talk) {
         talk.allDay = false;
       });
