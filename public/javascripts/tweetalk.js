@@ -9,12 +9,11 @@ $(function() {
   now.renderTweet = function(roomId, tweet) {
     var entry = $('<li>');
     entry.text(tweet);
-    console.log(dom.roomStream(roomId));
     dom.roomStream(roomId).append(entry);
   };
 
   dom.tweetalkForms.live('submit', function() {
-    var roomId = $('#room').attr('data-room');
+    var roomId = $(this).parent().attr('data-room');
     now.sendTweet(roomId, this.tweet.value);
     this.tweet.value = '';
     return false;
