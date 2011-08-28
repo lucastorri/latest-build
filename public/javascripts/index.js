@@ -1,21 +1,38 @@
 $(function() {
-  var dom = {
-    talks: $('.talk')
+  
+	now.ready(function() {
+    now.getConference();
+  });
+  
+  now.receiveConference = function(conference) {
+    var firstConferenceDay = new Date(conference.talks[0].start);
+    
+      $('#calendar').fullCalendar({
+        theme: true,
+        header: false,
+        allDaySlot: false,
+        defaultView: 'agendaWeek',
+        contentHeight: $(window).height() - 120,
+        firstDay: firstConferenceDay.getDay(),
+        events: conference.talks,
+        eventClick: eventClick
+      });
+      
+      $('#calendar').fullCalendar('gotoDate', firstConferenceDay);
   };
-
-  dom.talks.click(function() {
-    var talk = $(this);
-    var id = talk.attr('id');
+  
+  function eventClick(calendarEvent, jsEvent) {
+    var id = calendarEvent._id;
     $.get('/tweetalk/'+id, function(data) {
       data = $(data);
-      var position = talk.position();
       var title = $('.title', data);
       title.hide();
       data.dialog({
         title: title.text(),
-        position: [position.left, position.top]
+        position: [jsEvent.pageX, jsEvent.pageY]
       });
       tweetalk(id);
     });
-  });
+  }
+
 });

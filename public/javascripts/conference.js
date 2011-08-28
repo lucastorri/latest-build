@@ -63,8 +63,13 @@ var talks = function(){
       });
     });
   };
+<<<<<<< HEAD
 
   var create = function(html){
+=======
+	
+  var createTalk = function(html){
+>>>>>>> fb80529bbeabfa338f6a65796b3a1f9d2569c647
     dialog(html);
     createPickers(html);
     createTags(html);
