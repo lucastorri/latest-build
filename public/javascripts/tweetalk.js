@@ -2,24 +2,23 @@ $(function() {
   var dom = {
     tweetalkForms: $('.tweetalk form'),
     roomStream: function(roomId) {
-      return $('.tweetalk[data-room='+roomId+'] .stream');
+      return $('.tweetalk[data-room="'+roomId+'"] .stream');
     }
   };
   
-  function appendTweet(roomId, tweet) {
+  now.renderTweet = function(roomId, tweet) {
     var entry = $('<li>');
     entry.append(formatTweet(tweet));
+    console.log(dom.roomStream(roomId));
     dom.roomStream(roomId).append(entry);
-  }
-  
-  now.renderTweet = function(roomId, tweet) {
-    appendTweet(roomId, tweet);
   };
 
   dom.tweetalkForms.live('submit', function() {
     var roomId = $(this).parent().attr('data-room');
-    now.sendTweet(roomId, this.tweet.value);
-    this.tweet.value = '';
+    $.post('/tweetalk/'+roomId, { text: this.tweet.value }, function() {
+      console.log('FOI!');
+      this.tweet.value = '';      
+    });
     return false;
   });
   
