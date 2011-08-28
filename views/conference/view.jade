@@ -1,14 +1,3 @@
-#credentials
-  - if (!everyauth.loggedIn)
-    #twitter-login
-      a(href='/auth/twitter', style='border: 0px')
-        img(style='border: 0px', src='https://si0.twimg.com/images/dev/buttons/sign-in-with-twitter-l.png')
-  - else
-    span= everyauth.twitter.user.name
-    a(href='/logout') Logout
-
-.container
-  .content
-    .header
-      h1=title
-    #calendar
+.header
+  h1=title
+#calendar
