@@ -42,8 +42,9 @@ div.upcomingEvents a { display: block; }
 #signed-in-as { position: absolute; top: 8px; width: 300px; }
 #home-icon, #twitter-login, #signed-in-as { display: inline-block; }
 #home-icon { margin-right: 10px; }
-#home-icon img, #twitter-login img { opacity: 0.8; }
-#home-icon img:hover, #twitter-login img:hover { opacity: 1.0; }
+#home-icon img, #twitter-login img, #info img { opacity: 0.8; }
+#home-icon img:hover, #twitter-login img:hover, #info img:hover { opacity: 1.0; }
+#info { position: absolute; top: 10px; right: 12px; }
 
 span.fc-header-title h2 { font-size: 16px; }
 

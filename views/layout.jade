@@ -21,6 +21,7 @@ html
     script(type='text/javascript', src='/javascripts/tweetalk.js')
   
   body
+  
     #credentials
       
       if (typeof isHome === 'undefined')
@@ -37,5 +38,9 @@ html
         #signed-in-as
           strong=everyauth.twitter.user.name+' - '
           a(href='/logout') sign out
+    
+    #info
+      a(href='/about', style='border: 0px')
+        img(style='border: 0px', src='/images/about-icon.png')
     
     !=body
