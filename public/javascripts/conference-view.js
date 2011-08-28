@@ -39,12 +39,11 @@ $(function() {
 				var title = $('.title', data);
 				title.hide();
 				data.dialog({
+          resizable: false,
 					title: calendarEvent.title,
 					position: [jsEvent.pageX, jsEvent.pageY],
-					maxHeight: 400,
-					maxWidth: 300,
-					minHeight: 200,
-					minWidth: 100,
+					height: 400,
+					width: 300,
 					close: tt.close
 				});
 			});

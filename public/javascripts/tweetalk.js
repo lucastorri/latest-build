@@ -9,16 +9,15 @@ $(function() {
   now.renderTweet = function(roomId, tweet) {
     var entry = $('<li>');
     entry.append(formatTweet(tweet));
-    console.log(dom.roomStream(roomId));
     dom.roomStream(roomId).append(entry);
   };
 
   dom.tweetalkForms.live('submit', function() {
+    var tweetText = this.tweet.value.trim();
+    if (!tweetText) return false;
     var roomId = $(this).parent().attr('data-room');
-    $.post('/tweetalk/'+roomId, { text: this.tweet.value }, function() {
-      console.log('FOI!');
-      this.tweet.value = '';      
-    });
+    $.post('/tweetalk/'+roomId, { text: tweetText });
+    this.tweet.value = '';
     return false;
   });
   

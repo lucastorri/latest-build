@@ -1,8 +1,10 @@
 .tweetalk(data-room=roomId)
   ul.stream
   - if (!everyauth.loggedIn)
-      p Login to Tweet
+    #twitter-login
+      a(href='/auth/twitter', style='border: 0px')
+        img(style='border: 0px', src='/images/sign-in-with-twitter.png')
   - else
-      form
-        input.tweetalk-input(type='text', name='tweet')
-        input.tweetalk-submit.btn.primary(type='submit', value='Tweet')
+    form.twitter
+      input.tweetalk-input(type='text', name='tweet')
+      input.tweetalk-submit.btn.primary(type='submit', value='Tweet')
