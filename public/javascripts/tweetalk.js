@@ -2,7 +2,7 @@ $(function() {
   var dom = {
     tweetalkForms: $('.tweetalk form'),
     roomStream: function(roomId) {
-      return $('.tweetalk[data-room-id='+roomId+'] .stream');
+      return $('.tweetalk[data-room='+roomId+'] .stream');
     }
   };
   
@@ -11,7 +11,7 @@ $(function() {
     entry.text(tweet);
     console.log(entry, dom.roomStream(roomId));
     dom.roomStream(roomId).append(entry);
-  };
+  }
   
   now.renderTweet = function(roomId, tweet) {
     console.log(123, roomId, tweet);
@@ -19,18 +19,16 @@ $(function() {
   };
   
   dom.tweetalkForms.live('submit', function() {
-    var roomId = $('#room').data('room-id');
+    //var roomId = $('#room').data('room-id');
+    var roomId = $(this).parent().attr('data-room');
     now.sendTweet(roomId, this.tweet.value);
     this.tweet.value = '';
     return false;
   });
   
-  now.joined = function(userName, roomId) {
-    appendTweet(roomId, userName+' joined');
-  };
-  
 });
 
-var tweetalk = function(id) {
-  now.joinRoom(id);
+var tweetalk = function(roomId) {
+  now.joinRoom(roomId, function(stream) {
+  });
 };

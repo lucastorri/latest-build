@@ -21,10 +21,16 @@ $(function() {
       $('#calendar').fullCalendar('gotoDate', firstConferenceDay);
   };
   
-  function eventClick(calendarEvent) {
+  function eventClick(calendarEvent, jsEvent) {
     var id = calendarEvent._id;
     $.get('/tweetalk/'+id, function(data) {
-      $('body').append(data);
+      data = $(data);
+      var title = $('.title', data);
+      title.hide();
+      data.dialog({
+        title: title.text(),
+        position: [jsEvent.pageX, jsEvent.pageY]
+      });
       tweetalk(id);
     });
   }

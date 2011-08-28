@@ -4,6 +4,7 @@ require('server')(
   require('express'),
   require('everyauth'),
   require('now'),
+  require('model'),
   // Controllers
   [
     require('controllers/index'),

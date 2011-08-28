@@ -19,10 +19,5 @@ div.clear { clear: both;}
 textarea#description { height:52px; width: 100%; min-width:600px;}
 
 div.tips { font-size: 10px; text-align:right; }
-.talk { cursor: pointer; }
-.tweetalk { display: initial; }
-.tweetalk form { margin-bottom: 0; }
-.tweetalk .inner { resize: both; }
-.tweetalk .content { margin: 0; padding: 3px; height: 200px; }
 
 #calendar { width: 100%; margin: 0 auto; }
