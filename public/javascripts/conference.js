@@ -12,6 +12,10 @@ var form = function(){
   var bind = function(){
     ajaxify();
     $('#result').hide();
+    $('#result a').click(function(e){
+      e.preventDefault();
+      $('#result').hide();
+    })
   };
   var ajaxify = function(){
     $('#conference').ajaxForm({
@@ -32,7 +36,8 @@ var form = function(){
   };
 
   var success = function(title, action){
-    $('#result').text(title + ' successfully '+action).addClass('success').removeClass('fail').show();
+    $('#result').addClass('success').removeClass('error').show();
+    $('#result p.message').text(title + ' successfully '+action);
   };
 
   var updated = function(res){
@@ -40,7 +45,8 @@ var form = function(){
   };
 
   var fail = function(title, action){
-    $('#result').text('error '+ action + ' ' +title).addClass('fail').removeClass('success');
+    $('#result').addClass('error').removeClass('success').show();
+    $('#result p.message').text('error '+ action + ' ' +title);
   };
 
   var failOnUpdate = function(res){
