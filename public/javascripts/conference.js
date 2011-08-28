@@ -84,8 +84,12 @@ var talks = function(){
 
   var ajaxify = function(html){
     $('#form_talk').ajaxForm(function(res){
-      alert('oiii')
+      insertTalk(res);
     });
+  };
+  
+  var insertTalk = function(talk){
+	$('#talks_table tbody').append('<tr><td>'+talk.title+'</td> <td>'+talk.start+'</td> <td>'+talk.end+'</td> <td>'+talk.authors.join(',')+'</td> <td>'+talk.tags.join(',')+'</td> </tr>')
   };
 
   var createTags = function(html){
