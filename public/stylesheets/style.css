@@ -36,24 +36,42 @@ div.tips { font-size: 10px; text-align:right; }
 span.success { background:#68AAF4; }
 span.fail {background: #EA626C; }
 
-div.upcomingEvents a { display: block; }
-
 #credentials { position: absolute; top: 10px; left: 10px; }
 #signed-in-as { position: absolute; top: 8px; width: 300px; }
 #home-icon, #twitter-login, #signed-in-as { display: inline-block; }
 #home-icon { margin-right: 10px; }
-#home-icon img, #twitter-login img, #info img { opacity: 0.8; }
-#home-icon img:hover, #twitter-login img:hover, #info img:hover { opacity: 1.0; }
+#home-icon a img, #twitter-login a img, #info a img { opacity: 0.8; }
+#home-icon a img:hover, #twitter-login a img:hover, #info a img:hover { opacity: 1.0; }
 #info { position: absolute; top: 10px; right: 12px; }
 
 span.fc-header-title h2 { font-size: 16px; }
+table.fc-agenda-days thead th { padding: 5px 0; }
 
-div.home.container {
-  border: 1px solid #999; padding: 7px 15px 15px 15px;
+#addConference { float: right; }
+a, a:hover, #addConference h3 { color: #4099FF; }
+
+div.box.container {
+  border: 1px solid #999; padding: 7px 15px 15px 15px; margin-bottom: 25px;
   -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eee', endColorstr='#ddd');
   background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
   background: -moz-linear-gradient(top, #eee, #ddd);
 }
 
+.ui-dialog {
+  -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
 table.fc-agenda-days thead th { padding: 5px 0; }
+
+div.box.container ul { margin: 0 0 15px 0; }
+div.box.container ul li { margin-left: 18px; }
+
+iframe.vote { margin-left: 10px; }
+
+img.team-picture {
+  border: 5px solid #1e2221;
+  -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;
+}
