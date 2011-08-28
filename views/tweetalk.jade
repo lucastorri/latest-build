@@ -1,8 +1,6 @@
-#room.tweetalk.popover.left(data-room=roomId)
-  .inner
-    .title Talk Title
-    .content
-      ul.stream
-      form
-        input.tweetalk-input(type='text', name='tweet')
-        input.tweetalk-submit.btn.primary(type='submit', value='Tweet')
+.tweetalk(data-room=roomId)
+  .title= talkTitle
+  ul.stream
+  form
+    input.tweetalk-input(type='text', name='tweet')
+    input.tweetalk-submit.btn.primary(type='submit', value='Tweet')

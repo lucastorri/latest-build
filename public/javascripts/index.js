@@ -4,9 +4,17 @@ $(function() {
   };
 
   dom.talks.click(function() {
-    var id = $(this).attr('id');
+    var talk = $(this);
+    var id = talk.attr('id');
     $.get('/tweetalk/'+id, function(data) {
-      $('body').append(data);
+      data = $(data);
+      var position = talk.position();
+      var title = $('.title', data);
+      title.hide();
+      data.dialog({
+        title: title.text(),
+        position: [position.left, position.top]
+      });
       tweetalk(id);
     });
   });
