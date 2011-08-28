@@ -5,13 +5,10 @@ body {
 div.header { margin: 10px; }
 div.header h1 { margin-left: 5px; }
 div.container { margin: 0; width: auto; }
-div.container div.content { margin-right: 250px; }
-div.container div.sidebar { top: 10px; right: 0; position: absolute; width: 250px; }
 
 form input.tweetalk-input { width: 170px; }
 form input.tweetalk-submit { width: 70px; }
 
-div.content { margin: 20px; }
 div.day { padding:8px; padding-top:20px;}
 div.day:hover{ background:#0069D6; color:#FFFFFF;}
 
@@ -27,3 +24,5 @@ div.tips { font-size: 10px; text-align:right; }
 .tweetalk form { margin-bottom: 0; }
 .tweetalk .inner { resize: both; }
 .tweetalk .content { margin: 0; padding: 3px; height: 200px; }
+
+#calendar { width: 100%; margin: 0 auto; }

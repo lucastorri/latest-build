@@ -7,7 +7,7 @@ var conference = function(){
       });
     });
   };
-
+	
   var createTalk = function(html){
     dialog(html);
     createPickers(html);
