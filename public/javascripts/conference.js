@@ -19,7 +19,7 @@ var form = function(){
   };
   var ajaxify = function(){
     $('#conference').ajaxForm({
-      success: function(res){ update? updated(res) : created(res); },
+      success: function(res){update? updated(res) : created(res); },
       error: function(res){
         res = $.parseJSON(res.responseText);
         update? failOnUpdate(res) : failOnCreate(res);
@@ -28,7 +28,7 @@ var form = function(){
   };
 
   var created = function(res){
-    $('#conference').attr('method', 'PUT').attr('action','/conference/'+res.id);
+    $('#conference').attr('method', 'PUT').attr('action','/conference/'+res._id);
     success(res.title, 'created');
     $('#conference_button').attr('value', 'update');
     $('#conference').append('<input type="hidden" name="conference[id]" value="'+res.id+'" />');
@@ -50,7 +50,9 @@ var form = function(){
   };
 
   var failOnUpdate = function(res){
-    fail(res.original.title, 'updating');
+    console.log(res);
+    var title = res.original.title;
+    fail(title? title : '', 'updating');
   };
 
   var failOnCreate = function(res){
