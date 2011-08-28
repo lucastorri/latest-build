@@ -24,6 +24,11 @@ div.tips { font-size: 10px; text-align:right; }
 span.success { background:#68AAF4; }
 span.fail {background: #EA626C; }
 
-div.upcomingEvents a { display: block }
+div.upcomingEvents a { display: block; }
 
 #credentials { position: absolute; top: 10px; left: 10px; }
+#signed-in-as { position: absolute; top: 8px; width: 300px; }
+#home-icon, #twitter-login, #signed-in-as { display: inline-block; }
+#home-icon { margin-right: 10px; }
+#home-icon img, #twitter-login img { opacity: 0.8; }
+#home-icon img:hover, #twitter-login img:hover { opacity: 1.0; }
