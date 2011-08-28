@@ -6,6 +6,8 @@ div.header { margin: 10px; }
 div.header h1 { margin-left: 5px; }
 div.container { margin: 0; width: auto; }
 
+div.form_container { margin: 20px; }
+
 form input.tweetalk-input { width: 170px; }
 form input.tweetalk-submit { width: 70px; }
 
