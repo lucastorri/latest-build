@@ -29,10 +29,12 @@ $(function() {
 	
 	function eventClick(conference) {
 		return function(calendarEvent, jsEvent) {
-			var slug = calendarEvent.slug;
-			$.get('/tweetalk/'+slug, function(data) {
-				data = $(data);
-				var tt = tweetalk(slug);
+			var confSlug = conference.slug;
+      var talkSlug = calendarEvent.slug;
+      var roomId = confSlug+'/'+talkSlug;
+      $.get('/tweetalk/'+roomId, function(data) {
+        data = $(data);
+        var tt = tweetalk(roomId);
 				var title = $('.title', data);
 				title.hide();
 				data.dialog({
