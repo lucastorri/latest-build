@@ -1,12 +1,18 @@
 $(function() {
   
 	now.ready(function() {
-    now.getConference();
+    var paths = window.location.pathname.split('/');
+    var slug = paths[paths.length-1];
+    now.getConference(slug);
   });
 
   now.receiveConference = function(conference) {
     var firstConferenceDay = new Date(conference.talks[0].start);
-    
+      
+      $(conference.talks).each(function(index, talk) {
+        talk.allDay = false;
+      });
+      
       $('#calendar').fullCalendar({
         theme: true,
         header: { left: '', center: 'prev title next', right: '' },

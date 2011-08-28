@@ -3,6 +3,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+div.header h1 { text-align: center; }
 div.form_container { padding-top:30px; margin: 20px; }
 
 form input.tweetalk-input { width: 170px; }
@@ -22,5 +23,7 @@ div.tips { font-size: 10px; text-align:right; }
 #result { max-width:230px;}
 span.success { background:#68AAF4; }
 span.fail {background: #EA626C; }
+
+div.upcomingEvents a { display: block }
 
 #credentials { position: absolute; top: 10px; left: 10px; }
