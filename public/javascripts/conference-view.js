@@ -7,8 +7,8 @@ $(function() {
   });
 
   now.receiveConference = function(conference) {
-    var firstConferenceDay = new Date(conference.talks[0].start);
       
+			conference.start = new Date(conference.start);
       $(conference.talks).each(function(index, talk) {
         talk.allDay = false;
       });
@@ -19,12 +19,12 @@ $(function() {
         allDaySlot: false,
         defaultView: 'agendaWeek',
         contentHeight: $(window).height() - 170,
-        firstDay: firstConferenceDay.getDay(),
+        firstDay: conference.start.getDay(),
         events: conference.talks,
         eventClick: eventClick(conference)
       });
       
-      $('#calendar').fullCalendar('gotoDate', firstConferenceDay);
+      $('#calendar').fullCalendar('gotoDate', conference.start);
   };
 	
 	function eventClick(conference) {
