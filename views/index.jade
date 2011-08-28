@@ -1,4 +1,5 @@
 h1=title
 .container
   h3 Upcoming events
-  a(href='/conference/view/js-conf') JS Conf
+  - each conference in conferences
+    a(href='/conference/view/'+conference.slug)=conference.title

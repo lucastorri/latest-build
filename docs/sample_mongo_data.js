@@ -36,7 +36,6 @@ tdc.talks = [tdc1, tdc2, tdc3];
 
 tdc.save();
 
-
 Conference.find({slug:'tdc-floripa-2011'}, function (err, docs) {
   docs.forEach(function(d) {
     console.log(d);
