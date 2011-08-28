@@ -29,12 +29,12 @@ $(function() {
 	
 	function eventClick(conference) {
 		return function(calendarEvent, jsEvent) {
-			var slug = calendarEvent.slug;
-			$.get('/tweetalk/'+slug, function(data) {
+			var confSlug = conference.slug;
+      var talkSlug = calendarEvent.slug;
+      var roomId = confSlug+'/'+talkSlug;
+			$.get('/tweetalk/'+roomId, function(data) {
 				data = $(data);
-				var tt = tweetalk(slug);
-				var title = $('.title', data);
-				title.hide();
+				var tt = tweetalk(roomId);
 				data.dialog({
 					title: calendarEvent.title,
 					position: [jsEvent.pageX, jsEvent.pageY],
@@ -47,5 +47,4 @@ $(function() {
 			});
 		}
 	}
-
 });
