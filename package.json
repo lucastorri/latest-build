@@ -10,6 +10,8 @@
     , "everyauth"     : "0.2.18"
     , "mongoose"      : "2.0.2"
     , "twitter"       : "0.1.17"
+    , "superagent"    : "0.1.1"
+    , "qs"            : "0.3.1"
   }
   , "devDependencies" : {
     "nodemon"         : "0.5.5"
