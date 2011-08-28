@@ -3,9 +3,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-h1 { text-align: center; }
-
-div.form_container { margin: 20px; }
+div.form_container { padding-top:30px; margin: 20px; }
 
 form input.tweetalk-input { width: 170px; }
 form input.tweetalk-submit { width: 70px; }

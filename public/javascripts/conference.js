@@ -50,11 +50,11 @@ var form = function(){
   };
 
   var failOnUpdate = function(res){
-    fail(res.title, 'updating');
+    fail(res.original.title, 'updating');
   };
 
   var failOnCreate = function(res){
-    fail(res.title, 'creating');
+    fail(res.original.title, 'creating');
   };
 
   bind();
