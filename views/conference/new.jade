@@ -4,20 +4,22 @@ script(src='/javascripts/conference.js')
   .content
 
     h1 your conference
-    span#result
+    div#result.alert-message
+      a.close(href='#') ×
+      p.message
 
     form#conference(method='POST', action='/conference')
       div.left
         p
           h3 title
-          input(type='text')
+          input(type='text', name='conference[title]')
         p
           h3 where?
-          input(type='text')
+          input(type='text', name='conference[venue]')
       div.left
         p
           h3 description
-          textarea#description
+          textarea#description(name='conference[description]')
         input#conference_button.btn.save.primary(type='submit', value='save')
       div.clear
 

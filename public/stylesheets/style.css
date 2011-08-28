@@ -3,9 +3,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-h1 { text-align: center; }
-
-div.form_container { margin: 20px; }
+div.form_container { padding-top:30px; margin: 20px; }
 
 form input.tweetalk-input { width: 170px; }
 form input.tweetalk-submit { width: 70px; }
@@ -21,7 +19,7 @@ textarea#description { height:52px; width: 100%; min-width:600px;}
 div.tips { font-size: 10px; text-align:right; }
 .talk { cursor: pointer; }
 
-span#result { color: #fff; padding: 5px; }
+#result { max-width:230px;}
 span.success { background:#68AAF4; }
 span.fail {background: #EA626C; }
 
