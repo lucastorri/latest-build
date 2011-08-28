@@ -43,15 +43,14 @@ html
           strong=everyauth.twitter.user.name+' - '
           a(href='/logout') sign out
       
-      iframe.vote(src='http://nodeknockout.com/iframe/latest-build', frameborder='0', scrolling='no', allowtransparency='true', width='115', height='25')
+    #info
+      iframe(src='http://nodeknockout.com/iframe/latest-build', frameborder='0', scrolling='no', allowtransparency='true', width='115', height='25')
       
-    - if (typeof isAbout === 'undefined')
-      #info
-        a(href='/about', style='border: 0px')
+      - if (typeof isAbout === 'undefined')
+          a(href='/about', style='border: 0px')
+            img(style='border: 0px', src='/images/about-icon.png')
+      
+      - else
           img(style='border: 0px', src='/images/about-icon.png')
-    
-    - else
-      #info
-        img(style='border: 0px', src='/images/about-icon.png')
     
     !=body

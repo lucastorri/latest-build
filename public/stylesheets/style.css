@@ -69,8 +69,6 @@ table.fc-agenda-days thead th { padding: 5px 0; }
 div.box.container ul { margin: 0 0 15px 0; }
 div.box.container ul li { margin-left: 18px; }
 
-iframe.vote { margin-left: 10px; }
-
 img.team-picture {
   border: 5px solid #1e2221;
   -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;
