@@ -5,6 +5,8 @@ body {
 
 h1 { text-align: center; }
 
+div.form_container { margin: 20px; }
+
 form input.tweetalk-input { width: 170px; }
 form input.tweetalk-submit { width: 70px; }
 
@@ -17,5 +19,10 @@ div.clear { clear: both;}
 textarea#description { height:52px; width: 100%; min-width:600px;}
 
 div.tips { font-size: 10px; text-align:right; }
+.talk { cursor: pointer; }
+
+span#result { color: #fff; padding: 5px; }
+span.success { background:#68AAF4; }
+span.fail {background: #EA626C; }
 
 #credentials { position: absolute; top: 10px; left: 10px; }

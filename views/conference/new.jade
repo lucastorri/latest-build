@@ -1,11 +1,12 @@
 script(src='/javascripts/conference.js')
 
-.container
+.form_container
   .content
 
     h1 your conference
+    span#result
 
-    form(method='POST')
+    form#conference(method='POST', action='/conference')
       div.left
         p
           h3 title
@@ -17,7 +18,7 @@ script(src='/javascripts/conference.js')
         p
           h3 description
           textarea#description
-        input.btn.save.primary(type='submit', value='save')
+        input#conference_button.btn.save.primary(type='submit', value='save')
       div.clear
 
     h1 talks
