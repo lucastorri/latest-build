@@ -86,3 +86,27 @@ conf(
     )
   ]
 )
+
+conf(
+  'Node Knockout feedback :D',
+  "48h later, we are still (almost) alive. Time to talk about it :D",
+  'Wherever you are',
+  [
+    talk(
+      "Let's talk about the Node Knockout [Day 1]",
+      "",
+      ['nodejs', 'nodeko'],
+      new Date(2011, 7, 29, 3, 00, 0, 0),
+      new Date(2011, 7, 29, 20, 00, 0, 0),
+      ['The Latest Build Team']
+    ),
+    talk(
+      "Let's talk about the Node Knockout [Day 2]",
+      "",
+      ['nodejs', 'nodeko'],
+      new Date(2011, 7, 29, 3, 00, 0, 0),
+      new Date(2011, 7, 29, 20, 00, 0, 0),
+      ['The Latest Build Team']
+    )
+  ]
+)
