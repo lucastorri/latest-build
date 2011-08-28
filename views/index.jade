@@ -5,7 +5,11 @@
     span talk
 
 .box.container
+  #addConference
+    a(href='/conference/new')
+      h3 Add your conference
   h3 Upcoming events
   .upcomingEvents
     - each conference in conferences
-      a(href='/conference/view/'+conference.slug)=conference.title
+      div
+        a(href='/conference/view/'+conference.slug)=conference.title

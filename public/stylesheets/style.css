@@ -36,8 +36,6 @@ div.tips { font-size: 10px; text-align:right; }
 span.success { background:#68AAF4; }
 span.fail {background: #EA626C; }
 
-div.upcomingEvents a { display: block; }
-
 #credentials { position: absolute; top: 10px; left: 10px; }
 #signed-in-as { position: absolute; top: 8px; width: 300px; }
 #home-icon, #twitter-login, #signed-in-as { display: inline-block; }
@@ -47,8 +45,10 @@ div.upcomingEvents a { display: block; }
 #info { position: absolute; top: 10px; right: 12px; }
 
 span.fc-header-title h2 { font-size: 16px; }
-
 table.fc-agenda-days thead th { padding: 5px 0; }
+
+#addConference { float: right; }
+a, a:hover, #addConference h3 { color: #4099FF; }
 
 div.box.container {
   border: 1px solid #999; padding: 7px 15px 15px 15px; margin-bottom: 25px;
