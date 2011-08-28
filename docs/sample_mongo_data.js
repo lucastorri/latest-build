@@ -37,8 +37,14 @@ tdc.talks = [tdc1, tdc2, tdc3];
 tdc.save();
 
 
-Conference.find({}, function (err, docs) {
+Conference.find({slug:'tdc-floripa-2011'}, function (err, docs) {
   docs.forEach(function(d) {
+    console.log(d);
+  });
+});
+
+Conference.find({'talks.slug':'as-7-like-a-jboss'}, function (err, docs) {
+  docs && docs.forEach(function(d) {
     console.log(d.title);
   });
 });
