@@ -1,10 +1,9 @@
 body {
+  margin-top: 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-div.header { margin: 10px; }
-div.header h1 { margin-left: 5px; }
-div.container { margin: 0; width: auto; }
+h1 { text-align: center; }
 
 form input.tweetalk-input { width: 170px; }
 form input.tweetalk-submit { width: 70px; }
@@ -13,11 +12,10 @@ div.day { padding:8px; padding-top:20px;}
 div.day:hover{ background:#0069D6; color:#FFFFFF;}
 
 div.left { float:left; margin-right:40px;}
-div#tracks { float:right; }
 div.clear { clear: both;}
 
 textarea#description { height:52px; width: 100%; min-width:600px;}
 
 div.tips { font-size: 10px; text-align:right; }
 
-#calendar { width: 100%; margin: 0 auto; }
+#credentials { position: absolute; top: 10px; left: 10px; }

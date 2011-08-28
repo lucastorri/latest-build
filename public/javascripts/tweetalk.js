@@ -9,12 +9,10 @@ $(function() {
   function appendTweet(roomId, tweet) {
     var entry = $('<li>');
     entry.text(tweet);
-    console.log(entry, dom.roomStream(roomId));
     dom.roomStream(roomId).append(entry);
   }
   
   now.renderTweet = function(roomId, tweet) {
-    console.log(123, roomId, tweet);
     appendTweet(roomId, tweet);
   };
   
