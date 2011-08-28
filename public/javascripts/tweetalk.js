@@ -8,27 +8,39 @@ $(function() {
   
   function appendTweet(roomId, tweet) {
     var entry = $('<li>');
-    entry.text(tweet);
-    console.log(entry, dom.roomStream(roomId));
+    entry.append(formatTweet(tweet));
     dom.roomStream(roomId).append(entry);
   }
   
   now.renderTweet = function(roomId, tweet) {
-    console.log(123, roomId, tweet);
     appendTweet(roomId, tweet);
   };
-  
+
   dom.tweetalkForms.live('submit', function() {
-    //var roomId = $('#room').data('room-id');
     var roomId = $(this).parent().attr('data-room');
     now.sendTweet(roomId, this.tweet.value);
     this.tweet.value = '';
     return false;
   });
   
+  // modified from TwitterGitter by David Walsh (davidwalsh.name)
+  // courtesy of Jeremy Parrish (rrish.org)
+  var linkify = function(text) {
+    return text
+      .replace(/(https?:\/\/[\w\-:;?&=+.%#\/]+)/gi, '<a href="$1">$1</a>')
+      .replace(/(^|\W)@(\w+)/g, '$1<a href="http://twitter.com/$2">@$2</a>')
+      .replace(/(^|\W)#(\w+)/g, '$1#<a href="http://search.twitter.com/search?q=%23$2">$2</a>');
+  };
+
+  var formatTweet = function(tweet) {
+    return "<p><a href='http://twitter.com/" + tweet.user + "'><img width='16' height='16' alt='" + tweet.user + " on Twitter' src='" + tweet.image + "' /></a>" + linkify(tweet.text) + "</p>"
+  };
+
 });
 
 var tweetalk = function(roomId) {
-  now.joinRoom(roomId, function(stream) {
-  });
+  now.joinRoom(roomId, function(stream) { /*Render stream*/ });
+  return {
+    close: function() { now.leaveRoom(roomId); }
+  };
 };

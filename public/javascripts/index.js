@@ -3,7 +3,7 @@ $(function() {
 	now.ready(function() {
     now.getConference();
   });
-  
+
   now.receiveConference = function(conference) {
     var firstConferenceDay = new Date(conference.talks[0].start);
     
@@ -25,13 +25,18 @@ $(function() {
     var id = calendarEvent._id;
     $.get('/tweetalk/'+id, function(data) {
       data = $(data);
+      var tt = tweetalk(id);
       var title = $('.title', data);
       title.hide();
       data.dialog({
         title: title.text(),
-        position: [jsEvent.pageX, jsEvent.pageY]
+        position: [jsEvent.pageX, jsEvent.pageY],
+        maxHeight: 400,
+        maxWidth: 300,
+        minHeight: 200,
+        minWidth: 100,
+        close: tt.close
       });
-      tweetalk(id);
     });
   }
 
