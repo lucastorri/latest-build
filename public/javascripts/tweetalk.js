@@ -38,7 +38,11 @@ $(function() {
 });
 
 var tweetalk = function(roomId) {
-  now.joinRoom(roomId, function(stream) { /*Render stream*/ });
+  now.joinRoom(roomId, function(stream) {
+    stream.forEach(function(tweet) {
+      now.renderTweet(roomId, tweet);
+    });
+  });
   return {
     close: function() { now.leaveRoom(roomId); }
   };
