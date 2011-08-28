@@ -115,7 +115,7 @@ var talks = function(){
   };
 
   var createPickers = function(html){
-    var config = {ampm: true, separator: ' @ '};
+    var config = {ampm: false, separator: ' @ '};
     $('.start').datetimepicker(config);
     $('.end').datetimepicker(config);
   };

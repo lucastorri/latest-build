@@ -20,6 +20,7 @@ $(function() {
         defaultView: 'agendaWeek',
         contentHeight: $(window).height() - 170,
         firstDay: conference.start.getDay(),
+				firstHour: 8,
         events: conference.talks,
         eventClick: eventClick(conference)
       });
