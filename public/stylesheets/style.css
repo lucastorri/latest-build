@@ -21,6 +21,11 @@ div.form_container { padding-top:30px; margin: 20px; }
 form input.tweetalk-input { width: 170px; }
 form input.tweetalk-submit { width: 70px; }
 
+form.twitter {
+  position: absolute;
+  bottom: 0;
+}
+
 div.day { padding:8px; padding-top:20px;}
 div.day:hover{ background:#0069D6; color:#FFFFFF;}
 
@@ -35,6 +40,9 @@ div.tips { font-size: 10px; text-align:right; }
 .stream {
   list-style: none;
   margin: 0;
+  overflow-y: scroll;
+  min-height: 300px;
+  max-height: 300px;
 }
 
 #result { max-width:230px;}
