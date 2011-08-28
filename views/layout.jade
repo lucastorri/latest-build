@@ -15,7 +15,6 @@ html
     script(type='text/javascript', src='/javascripts/third-party/fullcalendar.min.js')
     script(type='text/javascript', src='/javascripts/third-party/jquery.form.js')
     script(type='text/javascript', src='/nowjs/now.js')
-    script(type='text/javascript', src='/javascripts/index.js')
     script(type='text/javascript', src='/javascripts/tweetalk.js')
   body
     #credentials
@@ -26,4 +25,4 @@ html
       - else
         strong=everyauth.twitter.user.name+' - '
         a(href='/logout') sign out
-  !=body
+    !=body
