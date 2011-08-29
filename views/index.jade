@@ -12,4 +12,4 @@
   .upcomingEvents
     - each conference in conferences
       div
-        a(href='/conference/view/'+conference.slug)=conference.start.toString().substr(4,11)+' &mdash; '+conference.title
+        a(href='/conference/view/'+conference.slug)=conference.title
